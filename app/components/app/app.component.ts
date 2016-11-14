@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "book-app",
-    template: `<book-list></book-list>`,
+    templateUrl: "./app/components/app/app.component.html"
 })
 export class AppComponent { }
+
