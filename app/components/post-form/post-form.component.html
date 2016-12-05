@@ -1,0 +1,37 @@
+<div>
+	<head>
+		<link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+		<script>alert("XSS");</script>
+	</head>
+
+	<form #f="ngForm" method="POST" (ngSubmit)="onSubmit(f.value)" >
+		<div class="row">
+			<div class="form-group col-sm-6">
+				<label for="title">Title:</label>
+				<input type="text" required class="form-control" id="title" name="title" ngModel>
+			</div> 
+		</div>
+		<div class="row">
+			<div class="form-group col-sm-6">
+				<label for="body">Body:</label>
+				<input type="text" required class="form-control" id="body" name="body" ngModel>
+			</div> 
+		</div>
+		<div class="row">
+			<div class="imageupload panel panel-default col-sm-6" >
+				<div class="panel-heading clearfix">
+					<h3 class="panel-title pull-left">Upload Image</h3>
+				</div>
+				<div class="file-tab panel-body">
+					<label class="btn btn-default btn-file">
+						<span>Browse</span>
+						<!-- The file is stored here. -->
+						<input type="file" name="image-file" name="image" ngModel>
+					</label>
+					<button type="button" class="btn btn-default">Remove</button>
+				</div>
+			</div> 
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
